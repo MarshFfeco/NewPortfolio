@@ -1,0 +1,112 @@
+/* Reset CSS básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos globais */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  section {
+    padding: 50px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .projeto {
+    margin-bottom: 30px;
+  }
+  
+  .projeto img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .projeto h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Estilos específicos */
+  #sobre {
+    background-color: #fff;
+  }
+  
+  #projetos {
+    background-color: #f9f9f9;
+  }
+
+  #meusprojetos {
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+    column-gap: 32px;
+
+    justify-content: center;
+  }
+  
+  #contato {
+    background-color: #fff;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #555;
+  }
+  
