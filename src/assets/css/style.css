@@ -1,82 +1,183 @@
-/* Reset CSS básico */
+/* variable */
+:root {
+  --background: #262626;
+  --color: #0A040A;
+  --back-2: #F2ECE9;
+
+
+}
+/* Reset basic CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+  /* SCROLL BAR */
+  ::-webkit-scrollbar {
+    width: 5px;
   }
-  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 7px;
+
+  }
+  ::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 20px;
+  }
+  ::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 20px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* FONT+LINE+WEIGHT-SIZE */
+  .headline-size { font-weight: 400; }
+
+  .title-size {}
+
+  .label-size { font-weight: 500; }
+
+  .body-size { font-weight: 400; }
+
   /* Estilos globais */
+  a {
+    width: 100%;
+    height: 100%;
+
+    all: unset;
+
+    cursor: pointer;
+  }
+
+  button {
+    all: unset;
+
+    cursor: pointer;
+  }
+
+  ul, li {
+    all: unset;
+  }
+
   body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    background-color: #f9f9f9;
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-areas:
+      "Header Github"
+      "IsMe Github"
+      "IsMe Github"
+      "Footer Footer";
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: repeat(3, 1fr) .3fr;
+
+    background-color: var(--background);
+    color: var(--color);
   }
-  
-  header {
-    background-color: #333;
-    padding: 20px;
+
+  .radius {
+    border-radius: 12px;
   }
-  
-  nav ul {
-    list-style: none;
+
+  .margin {
+    margin-inline: 10px;
+    margin-block: 10px;
   }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
+
+  .padding {
+    padding-inline: 24px;
+    padding-block: 12px;
   }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
+
+  .elevation-lg-1 {
+    background: var(--back-2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   }
-  
-  section {
-    padding: 50px;
+  .elevation-lg-2 {
+    background: var(--back-2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
   }
-  
-  h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  .elevation-lg-3 {
+    background: var(--back-2);
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
   }
-  
-  p {
-    margin-bottom: 20px;
+  .elevation-lg-4 {
+    background: var(--back-2);
+    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
   }
-  
+  .elevation-lg-5 {
+    background: var(--back-2);
+    box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ID MAIN */
+  #header {
+    grid-area: Header;
+  }
+
+  #isMe {
+    grid-area: IsMe;
+  }
+
+  #github {
+    grid-area: Github;
+    overflow: auto;
+  }
+
+  #footer {
+    grid-area: Footer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+
+    color: var(--back-2);
+    background-color: var(--background);
+  }
+
+    /* ID SECOND */
+    #navigation {background-color: blue;}
+
+    #about {
+    }
+
+    #contact {
+
+    }
+
+  /* CLASSES */
   .projeto {
     margin-bottom: 30px;
   }
-  
+
   .projeto img {
     width: 100%;
     max-width: 400px;
     height: auto;
     margin-bottom: 10px;
   }
-  
+
   .projeto h2 {
     font-size: 20px;
     margin-bottom: 10px;
   }
-  
-  footer {
-    background-color: #333;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-  }
-  
-  /* Estilos específicos */
-  #sobre {
-    background-color: #fff;
-  }
-  
-  #projetos {
-    background-color: #f9f9f9;
-  }
 
+  /* Estilos específicos */
   #meusprojetos {
     padding-top: 32px;
     display: grid;
@@ -85,11 +186,7 @@
 
     justify-content: center;
   }
-  
-  #contato {
-    background-color: #fff;
-  }
-  
+
   form input,
   form textarea {
     width: 100%;
@@ -97,7 +194,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
   }
-  
+
   form button {
     padding: 10px 20px;
     background-color: #333;
@@ -105,8 +202,29 @@
     border: none;
     cursor: pointer;
   }
-  
+
   form button:hover {
     background-color: #555;
   }
-  
+
+/* MEDIA */
+@media (min-width: 1240px) {
+  .headline-size{ font-size: 32px; line-height: 40px; }
+  .title-size { font-weight: 400;  font-size: 22px;  line-height: 28px; }
+  .label-size { font-size: 14px; line-height: 20px;}
+  .body-size { font-size: 16px; line-height: 24px; }
+}
+
+@media (max-width: 1239px) {
+  .headline-size{ font-size: 28px; line-height: 36px; }
+  .title-size { font-weight: 500; font-size: 16px; line-height: 24px; }
+  .label-size { font-size: 12px; line-height: 16px;}
+  .body-size { font-size: 14px; line-height: 20px; }
+}
+
+@media (max-width: 904px) {
+  .headline-size{ font-size: 24px; line-height: 32px; }
+  .title-size { font-weight: 500; font-size: 14px; line-height: 20px; }
+  .label-size { font-size: 11px; line-height: 16px;}
+  .body-size { font-size: 12px; line-height: 16px; }
+}
