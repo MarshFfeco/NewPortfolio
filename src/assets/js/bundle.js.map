@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;;;AAAa;AACb;AACA","sources":["webpack://solid/./src/assets/ts/index.ts"],"sourcesContent":["\"use strict\";\nconst m = \"m\";\nconsole.log(m);\n"],"names":[],"sourceRoot":""}
