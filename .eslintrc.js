@@ -16,4 +16,5 @@ module.exports = {
     "*.scss",
     "*.js",
   ],
+  rules: { "prettier/prettier": ["error", { "endOfLine": "auto" }] },
 };
