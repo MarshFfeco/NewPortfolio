@@ -2,6 +2,35 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/assets/ts/Email.ts":
+/*!********************************!*\
+  !*** ./src/assets/ts/Email.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Email = void 0;
+/* eslint-disable prettier/prettier */
+class Email {
+    tag;
+    constructor(tag) {
+        this.tag = tag;
+        this.Event();
+    }
+    Event() {
+        this.tag.addEventListener("click", () => {
+            navigator.clipboard.writeText("anderson22khg@gmail.com").then(() => {
+                alert("Email Copiado!");
+            });
+        });
+    }
+}
+exports.Email = Email;
+
+
+/***/ }),
+
 /***/ "./src/assets/ts/Search.ts":
 /*!*********************************!*\
   !*** ./src/assets/ts/Search.ts ***!
@@ -3380,10 +3409,13 @@ var exports = __webpack_exports__;
   \*******************************/
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+const Email_1 = __webpack_require__(/*! ./Email */ "./src/assets/ts/Email.ts");
 const Search_1 = __webpack_require__(/*! ./Search */ "./src/assets/ts/Search.ts");
 const Service_1 = __webpack_require__(/*! ./Service */ "./src/assets/ts/Service.ts");
 const service = new Service_1.Service("https://api.github.com/users/MarshFfeco/repos");
 const res = service.getUser();
+const tagButton = document.getElementById("email");
+const email = new Email_1.Email(tagButton);
 CreatedProject(res);
 async function CreatedProject(res) {
     const github = await res;

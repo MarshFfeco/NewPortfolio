@@ -1,8 +1,12 @@
+import { Email } from "./Email";
 import { Search } from "./Search";
 import { Service, Respos } from "./Service";
 
 const service = new Service("https://api.github.com/users/MarshFfeco/repos");
 const res: Promise<Respos[]> = service.getUser() as Promise<Respos[]>;
+
+const tagButton = document.getElementById("email") as HTMLAreaElement;
+const email = new Email(tagButton);
 
 CreatedProject(res);
 

@@ -16,6 +16,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.shadow {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
   /* SCROLL BAR */
   ::-webkit-scrollbar {
     width: 5px;
@@ -92,7 +96,10 @@ html {
     row-gap: 12px;
     column-gap: 12px;
 
-    background-color: var(--background);
+    background-image: url("../images/texture.jpg");
+    background-size: 15%;
+    background-repeat: repeat;
+    /* background-color: var(--background); */
     color: var(--color);
   }
 
@@ -329,4 +336,117 @@ html {
   .title-size { font-weight: 500; font-size: 14px; line-height: 20px; }
   .label-size { font-size: 11px; line-height: 16px;}
   .body-size { font-size: 12px; line-height: 16px; }
+
+  .padding {
+    padding-inline: 12px;
+    padding-block: 6px;
+  }
+
+  body {
+    grid-template-areas:
+      "IsMe"
+      "Github"
+      "Footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr 1fr .2fr;
+  }
+
+  #isMe {
+    margin-inline: 12px;
+    grid-area: IsMe;
+
+    grid-template-areas:
+      "Header Header"
+      "About Contact";
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 1fr;
+
+    justify-content: center;
+    align-items: center;
+
+    row-gap: 0px;
+  }
+
+  #isMe section {
+    border-top: 0px;
+
+    align-self: flex-start;
+  }
+
+    #header {grid-area: Header; margin: 0; height: 100%;}
+
+    #about {
+      grid-area: About;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #about figure {
+      width: 90px;
+      height: 90px;
+    }
+    #about figure img {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 999px;
+
+      object-fit: cover;
+    }
+
+    #contact {
+      grid-area: Contact;
+
+      text-align: center;
+    }
+
+
+  #github {
+    grid-area: Github;
+    overflow: auto;
+
+    margin-right: 0;
+    padding: 0;
+
+    border-radius: 0px;
+
+    background-color: var(--back-2);
+  }
+
+  #github h1 {
+    margin-top: 12px;
+    margin-inline: 12px;
+  }
+
+  #footer {
+    margin-inline: 12px;
+  }
+
+  #MyProject {
+    padding-top: 16px;
+    padding-inline: 6px;
+
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 16px;
+
+    justify-content: center;
+  }
+
+  .project {
+
+    border-radius: 12px;
+    border: 2px solid var(--color);
+
+    padding-inline: 12px;
+    padding-block: 6px;
+
+    cursor: pointer;
+
+    transition: all 300ms;
+  }
 }
